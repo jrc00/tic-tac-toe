@@ -16,10 +16,10 @@ This is a basic Tic-Tac-Toe game created using HTML, CSS, Javascript and jQuery.
 * .on()
 * checkWinner
 * CSS: float
+* newGame function creates bug with playerTurn
 
 ### Current Bugs
 * getPlayerX prompt not working
-* newGame function creates bug with playerTurn
 
 ## What's Next / Future Deployments
 
