@@ -22,7 +22,11 @@ This is a basic Tic-Tac-Toe game created using HTML, CSS, Javascript and jQuery.
 * newGame function creates bug with playerTurn
 
 ## What's Next / Future Deployments
-* Keep track of winners and losers
+
+How can we make tic tac toe even more fun and exciting?
+
+* Keep score
+* Display player's turn dialogue
 * Create AI for 1-player mode
 * Multiplayer team mode, everyone joins online, picks a team, picks a square, tallies votes and marks X or O, repeat until one team wins
 * Trivia mode: correct answer gets the square

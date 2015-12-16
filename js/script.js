@@ -33,6 +33,11 @@ function getPlayerO() {
 
 function doSquareClick() {
     var square = $(this);
+    if (counter % 2 === 0) {
+        playerTurn = 'X';
+    } else {
+        playerTurn = 'O';
+    };
     square.prepend(playerTurn);
     square.off('click'); // freeze square after player's turn
     game[this.id] = playerTurn; // add each move to game array
@@ -40,7 +45,7 @@ function doSquareClick() {
     counter++;
     var winner = checkWinner(); // determine game winner
     console.log('winner: ' + winner);
-    playerTurn = playerTurn === 'X' ? 'O' : 'X'; // toggle between players
+    // playerTurn = playerTurn === 'X' ? 'O' : 'X'; // toggle between players
 }
 
 function checkWinner() {
@@ -79,16 +84,16 @@ function checkWinner() {
 // GAME PLAY
 $(document).ready(function() {
     console.log('ready');
-    getPlayerX();
     getPlayerO();
+    getPlayerX();
     $('.square').click(doSquareClick);
-    $('.square').click(checkWinner);
+    // $('.square').click(checkWinner);
 
 // CSS Fade Action on Mouseover
 $('.square').hover(function() {
     $(this).fadeOut(200);
     $(this).fadeIn(200);
-});
+    });
 });
 
 // START A NEW GAME
@@ -96,6 +101,7 @@ $('#restart').click(newGame);
   function newGame() {
     $('.square').on('click', doSquareClick  ); //unfreeze squares
     game = [null, null, null, null, null, null, null, null, null]; // resets board
-    playerTurn = 'X';
+    // playerTurn = 'X';
     $('.square').text(''); // clear squares
+    counter = 0;
 }
