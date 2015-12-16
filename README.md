@@ -8,6 +8,7 @@ General Assembly WDI December 16, 2015
 ## Project Notes
 * [A very quick and dirty wireframe](https://www.evernote.com/l/AAiicypCIchHeI3aNURGn1wDCnxL4ApagX8)
 * [Trello]()
+
 This is a basic Tic-Tac-Toe game created using HTML, CSS, Javascript and jQuery.
 
 ## Challenges
