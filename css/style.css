@@ -1,5 +1,5 @@
 body {
-  background: #95a5a6
+  background: #7f8c8d
 }
 
 h1 {
@@ -8,6 +8,11 @@ h1 {
   margin-top: 50px;
   text-align: center;
   color: white;
+  font-family: museo-slab, Georgia, 'Times New Roman';
+  font-size: 80px;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-shadow: 4px 3px 0px #7f8c8d, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 #gameboard {
@@ -15,8 +20,8 @@ h1 {
   margin-right: auto;
   height: 300px;
   width: 300px;
-  outline: 4px solid;
-  background: #e5f2ff;
+  outline: 4px #7f8c8d;
+  background: white;
 }
 
 .row {
@@ -26,11 +31,12 @@ h1 {
 
 .square {
   font-size: 70px;
+  font-family: museo-slab, Georgia, 'Times New Roman';
   text-align: center;
-  background: #e5f2ff;
+  background: white;
   width: 100px;
   height: 100px;
-  outline: 2px solid;
+  outline: 2px #7f8c8d;
   float: left;
 }
 
@@ -44,9 +50,16 @@ h1 {
   text-align: center;
   position: relative;
   color: white;
+  font-family: museo-slab, Georgia, 'Times New Roman';
+  letter-spacing: 0px;
+  margin-top: 50px;
 }
 
 #restart {
-  height: 30px;
-  width: 80px;
+  height: 40px;
+  width: 120px;
+  font-family: museo-slab, Georgia, 'Times New Roman';
+  font-size: 22px;
+  color: gray
+
 }

@@ -24,11 +24,16 @@ $(document).ready(function () {
 // Alternate Players and Log Moves to Console
   $('.square').click(function() {
     var square = $(this);
-    console.log(square);
+    // console.log(square);
     square.prepend(playerTurn);
     square.off('click'); // freeze square after player's turn
     game[this.id] = playerTurn; // add each move to game array
     console.log(game);
+    counter++;
+    //check for tie
+    if (counter === 9) {
+      swal({   title: "Cat's Game!",   text: "Try Again!",   imageUrl: "images/grumpycat.png" });
+    }
     playerTurn = playerTurn === 'X' ? 'O' : 'X'; // toggle between players
   });
 
@@ -44,9 +49,6 @@ function checkWinner() {
     };
   };
 };
-
-// check for tie
-
 
 // log winners and ties
 
@@ -66,4 +68,3 @@ $('#restart').click(newGame);
     $('.square').text(''); // clear squares
     $('.square').on('click'); //unfreeze squares
 }
-

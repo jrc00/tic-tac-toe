@@ -5,10 +5,12 @@
   <title>JC's Tic Tac Toe</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="node_modules/sweetalert/dist/sweetalert.css">
 </head>
 <body>
 
-<h1>TIC TAC TOE</h1>
+<h1>tic tac toe</h1>
 
 <div id="gameboard">
   <div class="row1">
@@ -28,11 +30,11 @@
   </div>
 </div>
 
-<div class="wrapper">
-<table class="score">
+<div class ="score">
+<table>
   <tr>
-    <td>PLAYER 1</td>
-    <td>PLAYER 2</td>
+    <th>player X</th>
+    <th>player O</th>
   </tr>
   <tr>
     <td class="score-x">0</td>
@@ -42,7 +44,7 @@
 </div>
 
 <div class="wrapper">
-<button id="restart">Play Again</button>
+<button id="restart">play again</button>
 </div>
 
 <script type="text/javascript" src="js/script.js"></script>
