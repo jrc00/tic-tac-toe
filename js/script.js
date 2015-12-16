@@ -19,7 +19,7 @@ function getPlayerX() {
         text: "Enter your name",
         type: "input",   showCancelButton: true,   closeOnConfirm: false,   animation: "slide-from-top", },
         function(inputValue){   if (inputValue === false) return false;
-            swal("Nice!", "Good luck, " + inputValue, "success"); });;
+            swal("Nice!", "Good luck, " + inputValue, "success"); });
 }
 
 function getPlayerO() {
@@ -28,7 +28,7 @@ function getPlayerO() {
         text: "Enter your name",
         type: "input",   showCancelButton: true,   closeOnConfirm: false,   animation: "slide-from-top", },
         function(inputValue){   if (inputValue === false) return false;
-            swal("Nice!", "Good luck, " + inputValue, "success"); });;
+            swal("Nice!", "Good luck, " + inputValue, "success"); });
 }
 
 function doSquareClick() {
@@ -50,8 +50,9 @@ function checkWinner() {
     });
     if (xWins) {
         swal({
-            title: "XXX",
+            title: "Very Nice!",
             text: "X wins!",
+            imageUrl: "images/borat.png"
         });
         return
     }
@@ -60,8 +61,9 @@ function checkWinner() {
     });
     if (oWins) {
         swal({
-            title: "OOO",
+            title: "Very Nice!",
             text: "O wins!",
+            imageUrl: "images/walter.png"
         });
         return
     }

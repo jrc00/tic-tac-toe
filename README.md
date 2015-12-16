@@ -13,6 +13,10 @@ General Assembly WDI December 16, 2015
 
 ## Challenges
 
+* .on()
+* checkWinner
+* CSS: float
+
 ## What's Next / Future Deployments
 
 
