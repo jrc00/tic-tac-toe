@@ -38,7 +38,7 @@ function doSquareClick() {
     } else {
         playerTurn = 'O';
     };
-    square.prepend(playerTurn);
+    square.html(playerTurn);
     square.off('click'); // freeze square after player's turn
     game[this.id] = playerTurn; // add each move to game array
     console.log(game);
