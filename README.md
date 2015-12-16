@@ -12,11 +12,18 @@ General Assembly WDI December 16, 2015
 This is a basic Tic-Tac-Toe game created using HTML, CSS, Javascript and jQuery.
 
 ## Challenges
+### Fixed
 * .on()
 * checkWinner
 * CSS: float
 
+### Current Bugs
+* getPlayerX prompt not working
+* newGame function creates bug with playerTurn
+
 ## What's Next / Future Deployments
+* Keep track of winners and losers
+* Create AI for 1-player mode
 * Multiplayer team mode, everyone joins online, picks a team, picks a square, tallies votes and marks X or O, repeat until one team wins
 * Trivia mode: correct answer gets the square
 * Explosion mode: board explodes upon winner
