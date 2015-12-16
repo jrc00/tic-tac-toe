@@ -1,18 +1,3 @@
-// // prompt for player names
-// var playerX = swal({
-//   title: "Player X",
-//   text: "Enter your name",
-//   type: "input",   showCancelButton: true,   closeOnConfirm: false,   animation: "slide-from-top", },
-//   function(inputValue){   if (inputValue === false) return false;
-//     swal("Nice!", "Good luck, " + inputValue, "success"); });;
-
-// var playerO = swal({
-//   title: "Player O",
-//   text: "Enter your name",
-//   type: "input",   showCancelButton: true,   closeOnConfirm: false,   animation: "slide-from-top", },
-//   function(inputValue){   if (inputValue === false) return false;
-//     swal("Nice!", "Good luck, " + inputValue, "success"); });;
-
 // GLOBAL VARIABLES
 var game = [null, null, null, null, null, null, null, null, null];
 var winningCombo = [
@@ -28,27 +13,33 @@ var winningCombo = [
 var playerTurn = 'X';
 var counter = 0;
 
+function getPlayerX() {
+    var playerX = swal({
+        title: "Player X",
+        text: "Enter your name",
+        type: "input",   showCancelButton: true,   closeOnConfirm: false,   animation: "slide-from-top", },
+        function(inputValue){   if (inputValue === false) return false;
+            swal("Nice!", "Good luck, " + inputValue, "success"); });;
+}
+
+function getPlayerO() {
+    var playerO = swal({
+        title: "Player O",
+        text: "Enter your name",
+        type: "input",   showCancelButton: true,   closeOnConfirm: false,   animation: "slide-from-top", },
+        function(inputValue){   if (inputValue === false) return false;
+            swal("Nice!", "Good luck, " + inputValue, "success"); });;
+}
+
 function doSquareClick() {
     var square = $(this);
-    // console.log(square);
     square.prepend(playerTurn);
     square.off('click'); // freeze square after player's turn
     game[this.id] = playerTurn; // add each move to game array
     console.log(game);
     counter++;
-
-    var winner = checkWinner();
+    var winner = checkWinner(); // determine game winner
     console.log('winner: ' + winner);
-
-    // check for tie
-    if (counter === 9) {
-    // sweetalert prompt
-        swal({
-            title: "Cat's Game",
-            text: "Try Again",
-            imageUrl: "images/grumpycat.png"
-        });
-    }
     playerTurn = playerTurn === 'X' ? 'O' : 'X'; // toggle between players
 }
 
@@ -58,29 +49,38 @@ function checkWinner() {
         return game[wc[0]] === 'X' && game[wc[1]] === 'X' && game[wc[2]] === 'X';
     });
     if (xWins) {
-        return 'X';
+        swal({
+            title: "XXX",
+            text: "X wins!",
+        });
+        return
     }
-
     var oWins = winningCombo.some(function(wc) {
         return game[wc[0]] === 'O' && game[wc[1]] === 'O' && game[wc[2]] === 'O';
     });
     if (oWins) {
-        return 'O';
+        swal({
+            title: "OOO",
+            text: "O wins!",
+        });
+        return
     }
-
-    return null;
+    if (counter === 9) {
+        swal({
+            title: "Cat's Game",
+            text: "Try Again",
+            imageUrl: "images/grumpycat.png"
+        });
+    }
 }
 
 // GAME PLAY
 $(document).ready(function() {
     console.log('ready');
-
-    // Alternate Players and Log Moves to Console
+    getPlayerX();
+    getPlayerO();
     $('.square').click(doSquareClick);
-
-
-// log winners and ties
-
+    $('.square').click(checkWinner);
 
 // CSS Fade Action on Mouseover
 $('.square').hover(function() {
