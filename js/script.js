@@ -66,7 +66,7 @@ function checkWinner() {
     });
     if (oWins) {
         swal({
-            title: "Very Nice!",
+            title: "Way to F**kin Go, Donny!",
             text: "O wins!",
             imageUrl: "images/walter.png"
         });
