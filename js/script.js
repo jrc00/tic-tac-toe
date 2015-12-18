@@ -45,11 +45,9 @@ function doSquareClick() {
     counter++;
     var winner = checkWinner(); // determine game winner
     console.log('winner: ' + winner);
-    // playerTurn = playerTurn === 'X' ? 'O' : 'X'; // toggle between players
 }
 
 function checkWinner() {
-    console.log('checkWinner: game = ' + game);
     var xWins = winningCombo.some(function(wc) {
         return game[wc[0]] === 'X' && game[wc[1]] === 'X' && game[wc[2]] === 'X';
     });
@@ -87,7 +85,6 @@ $(document).ready(function() {
     getPlayerO();
     getPlayerX();
     $('.square').click(doSquareClick);
-    // $('.square').click(checkWinner);
 
 // CSS Fade Action on Mouseover
 $('.square').hover(function() {
@@ -101,7 +98,6 @@ $('#restart').click(newGame);
   function newGame() {
     $('.square').on('click', doSquareClick  ); //unfreeze squares
     game = [null, null, null, null, null, null, null, null, null]; // resets board
-    // playerTurn = 'X';
     $('.square').text(''); // clear squares
     counter = 0;
 }
